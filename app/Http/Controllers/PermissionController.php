@@ -82,8 +82,7 @@ class PermissionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $name = $request->input('name');
-        dd($name);
+    
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|max:255',
