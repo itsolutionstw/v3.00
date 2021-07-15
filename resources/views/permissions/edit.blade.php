@@ -14,22 +14,22 @@
         <div class="row align-items-center justify-content-start">
             <h1 class="text-left col">Berechtiung bearbeiten</h1>
         </div>
-        <form action="{{ route('permissions.update', $permission->id) }}" method="POST">
+        <form action="{{ route('permissions.update', $permission->id) }}" method="post">
             @csrf
             @method('PATCH')
             <div class="form-group">
                 <label for="name" class="col-form-label">Name</label>
-                <input class="form-control" type="text" value="{{ $permission->name }}" id="name">
+                <input class="form-control" type="text" value="{{ $permission->name }}" id="name" name="name">
             </div>
             <div class="form-group">
                 <label for="slug" class="col-form-label">Slug</label>
-                <input class="form-control" type="text" value="{{ $permission->slug }}" id="slug">
+                <input class="form-control" type="text" value="{{ $permission->slug }}" id="slug" name="slug">
             </div>
             <div class="form-group">
                 <label for="description" class="col-form-label">Beschreibung</label>
-                <input class="form-control" type="text" value="{{ $permission->description }}" id="description">
+                <input class="form-control" type="text" value="{{ $permission->description }}" id="description" name="description">
             </div>
-            <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Speichern</button>
+            <button type="submit" name="permissionsedit" class="btn btn-primary mt-4 pr-4 pl-4">Speichern</button>
         </form>
     </div> 
 @endsection

@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    @can('administrator')
+                    @can('admin')
                         Du hast Administrator Berechtigungen
                     @endcan
                     {{ __('You are logged in!') }}

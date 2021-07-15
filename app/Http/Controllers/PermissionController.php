@@ -90,7 +90,7 @@ class PermissionController extends Controller
 
         Permission::whereId($id)->update($validatedData);
 
-        return redirect('permissions', 'Permission erfolgreich bearbeitet.');
+        return redirect('permissions')->with('success','Berechtigung erfolgreich hinzugefügt.');
     }
 
     /**
@@ -101,6 +101,9 @@ class PermissionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $permission = Permission::findOrFail($id);
+        $permission->delete();
+
+        return redirect('/permissions')->with('success', 'Erfolgreich gelöscht!');
     }
 }

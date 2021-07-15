@@ -18,6 +18,7 @@
             </thead>
             <tbody>
                 @foreach($permissions as $permission)
+                <tr>
                     <th scope="row">{{ $permission->id }}</th>
                     <td>{{ $permission->name }}</td>
                     <td>{{ $permission->slug }}</td>
@@ -31,6 +32,7 @@
                                 style="-webkit-appearance:none;">Löschen</button>
                         </form>
                     </td>
+                </tr>
                 @endforeach
             </tbody>
         </table>
